@@ -1,0 +1,11 @@
+
+
+1. Siempre escribe código limpio y bien estructurado. Utiliza buenas prácticas de programación como la indentación, nombres de variables claras y lógicas y comentarios para documentar tu código.
+
+2. Utiliza herramientas de debugging para identificar los errores en el código y solucionarlos. Esto te ayudará a mejorar la calidad de tu código y evitarás perder horas buscando y solucionando errores en tu código.
+
+3. Utiliza el software de control de versiones, como GIT, para guardar todos tus cambios y revertir a una versión anterior del código si lo necesitas.
+
+4. No te enfoques en volver tu código cada vez más corto. En lugar de eso, escribe código claro que sea fácil de leer, comprender y depurar para mejorar la calidad.
+
+5. Siempre realiza pruebas exhaustivas para garantizar que el código funcione correctamente y no de fallos. Esto puede ser una tarea tediosa, pero es importante para evitar problemas a largo plazo.
