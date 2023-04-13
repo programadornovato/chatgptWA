@@ -35,10 +35,10 @@ if($mensaje!=null){
     require_once "chatgpt.php";
     $respuesta=preguntaChatgpt($mensaje);
     //ESCRIBIMOS LA RESPUESTA
-    file_put_contents("text.txt", $respuesta);
-    //require_once "envia.php";
+    //file_put_contents("text.txt", $respuesta);
+    require_once "envia.php";
     //ENVIAMOS LA RESPUESTA VIA WHATSAPP
-    //enviar($mensaje,$respuesta,$id,$timestamp,$telefonoCliente);
+    enviar($mensaje,$respuesta,$id,$timestamp,$telefonoCliente);
 
 
 }
