@@ -19,12 +19,11 @@ function enviar($recibido, $enviado, $idWA,$timestamp,$telefonoCliente) {
     }
     //SI LA CANTIDAD DE REGISTROS ES 0 ENVIAMOS EL MENSAJE DE LO CONTRARIO NO LO ENVIAMOS PORQUE YA SE ENVIO
     if ($cantidad == 0) {
-
         $enviado=str_replace("\n","",$enviado);
         //TOKEN QUE NOS DA FACEBOOK
-        $token = 'EAAIwtTEOYPABAOOqCEWfD0KcsuhSpjvbxSWEwuZCyYTJPb6XqrFMyFtvYoZAXLhG3FSNXJIUYREH9jw7RmvdpiWfwd7NW4bysXbMdgH0LElZAoMpJrQDopZBfrK6ZB1dZBXnPXHQLEkEMkhECWKObZC922m4SOkLwSi5NQVwwLwoVRgWnuM0PAukZAbVMkHQDIkuZAa4ZBTQEV6AZDZD';
+        $token = 'EAAIwtTEOYPABAKXkASYRU7L9yPtZB1ZBF1RMQQju0Y2ZBLQGDzVjZBtxfPS62y2STLkvVV25j31Teh1u6hHZA4QDm8hYxIeUJgnyBzZBRzOSNDv1YjNQX9i4VukW0a5iarxNyHv9iaphm5kNGuaitj9jKL6FzAzQ3z5wh8hZCxq6oOQBy4W8YExRJib32bdvvI6dFkhqhXWBQZDZD';
         //NUESTRO TELEFONO
-        $telefono = '527121122441';
+        $telefonoCliente=str_replace("521","52",$telefonoCliente);
         //IDENTIFICADOR DE NÚMERO DE TELÉFONO
         $telefonoID = '116907067953774';
         //URL A DONDE SE MANDARA EL MENSAJE
@@ -34,7 +33,7 @@ function enviar($recibido, $enviado, $idWA,$timestamp,$telefonoCliente) {
                 . '{'
                 . '"messaging_product": "whatsapp", '
                 . '"recipient_type": "individual",'
-                . '"to": "' . $telefono . '", '
+                . '"to": "' . $telefonoCliente . '", '
                 . '"type": "text", '
                 . '"text": '
                 . '{'
@@ -56,10 +55,6 @@ function enviar($recibido, $enviado, $idWA,$timestamp,$telefonoCliente) {
         $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         //CERRAMOS EL CURL
         curl_close($curl);
-
-
-        //$enviado= trim($enviado,"\n");
-        $enviado=str_replace("\n","",$enviado);
         //INSERTAMOS LOS REGISTROS DEL ENVIO DEL WHATSAPP
         $sql = "INSERT INTO registro "
             . "(mensaje_recibido    ,mensaje_enviado   ,id_wa        ,timestamp_wa        ,     telefono_wa) VALUES "
